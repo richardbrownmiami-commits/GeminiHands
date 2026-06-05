@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Gemini Pro"
+rootProject.name = "Gemini Hands"
 include(":app")
  

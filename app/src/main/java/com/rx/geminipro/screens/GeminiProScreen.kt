@@ -177,6 +177,8 @@ fun GeminiProScreen(
                     )
                 )
                 viewModel.onEvent(GeminiUiEvent.ApplicationReady)
+                // Gemini Hands: Inject chat monitor script on every page load
+                webView.evaluateJavascript(com.rx.geminipro.services.ChatMonitorInjector.MONITOR_SCRIPT, null)
             },
             onCameraTmpFileCreated = { uri ->
                 tempCameraUri = uri

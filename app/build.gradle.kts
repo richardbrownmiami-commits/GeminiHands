@@ -5,21 +5,17 @@ plugins {
     id("kotlin-kapt")
     alias(libs.plugins.hilt.android.plugin)
 }
-
 android {
     namespace = "com.rx.geminipro"
     compileSdk = 36
-
     defaultConfig {
         applicationId = "com.rx.geminipro"
-        minSdk = 24
-        targetSdk = 36
-        versionCode = 207
-        versionName = "1.7.4"
-
+        minSdk = 26
+        targetSdk = 34
+        versionCode = 300
+        versionName = "2.0.0-hands"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
-
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -29,23 +25,18 @@ android {
             )
         }
     }
-
     kotlin {
         jvmToolchain(21)
     }
-
     hilt {
         enableAggregatingTask = false
     }
-
     buildFeatures {
         compose = true
         buildConfig = true
     }
 }
-
 dependencies {
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
@@ -55,16 +46,20 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
     implementation(libs.androidx.webkit)
-
     implementation(libs.androidx.lifecycle.runtime.compose)
     implementation(libs.androidx.lifecycle.viewmodel.compose)
     implementation(libs.androidx.core.splashscreen)
     implementation(libs.datastore.preferences)
     implementation(libs.datastore)
-
     implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)
     implementation(libs.androidx.hilt.navigation.compose)
+
+    // WorkManager
+    implementation("androidx.work:work-runtime-ktx:2.9.1")
+
+    // Coroutines
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

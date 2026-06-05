@@ -23,6 +23,8 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.viewinterop.AndroidView
 import com.rx.geminipro.utils.network.WebAppInterface
+import com.rx.geminipro.services.ChatMonitorInjector
+import com.rx.geminipro.services.CommandExecutor
 import java.lang.ref.WeakReference
 
 @SuppressLint("SetJavaScriptEnabled", "ClickableViewAccessibility")
@@ -124,6 +126,14 @@ fun GeminiWebViewer(
                             getRetryUrl = { initialUrl }
                         ),
                         "Android"
+                    )
+
+                    // Gemini Hands: Add chat monitor JS interface
+                    val commandExecutor = CommandExecutor(context)
+                    val chatMonitor = ChatMonitorInjector(commandExecutor)
+                    addJavascriptInterface(
+                        chatMonitor.getJavaScriptInterface(),
+                        "GeminiHands"
                     )
 
                     setOnTouchListener { v, event ->

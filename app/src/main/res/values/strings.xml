@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">Gemini Pro</string>
+    <string name="app_name">Gemini Hands</string>
+    <string name="accessibility_service_description">Gemini Hands uses accessibility to control your device on behalf of Gemini AI. This includes tapping, swiping, typing, reading screen content, and interacting with other apps.</string>
 </resources>
