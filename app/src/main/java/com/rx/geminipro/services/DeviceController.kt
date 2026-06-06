@@ -24,8 +24,10 @@ import android.provider.Settings
 import android.telephony.SmsManager
 import android.util.Log
 import android.app.WallpaperManager
+import android.annotation.SuppressLint
 import java.util.Calendar
 
+@SuppressLint("MissingPermission")
 class DeviceController(private val context: Context) {
 
     companion object {
@@ -349,3 +351,4 @@ class DeviceController(private val context: Context) {
         context.startActivity(intent)
     }
 }
+
