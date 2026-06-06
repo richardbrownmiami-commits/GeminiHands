@@ -82,8 +82,8 @@ class GeminiNotificationListener : NotificationListenerService() {
         if (notifications.isEmpty()) return "No recent notifications."
 
         val builder = StringBuilder("Recent Notifications:\n")
-        notifications.takeLast(10).forEach { notif ->
-            builder.append("• ${notif.packageName}: ${notif.title} - ${notif.text}\n")
+        notifications.toList().takeLast(10).forEach { notif ->
+            builder.append("? ${notif.packageName}: ${notif.title} - ${notif.text}\n")
         }
         return builder.toString()
     }
@@ -108,3 +108,4 @@ class GeminiNotificationListener : NotificationListenerService() {
         cancelAllNotifications()
     }
 }
+
