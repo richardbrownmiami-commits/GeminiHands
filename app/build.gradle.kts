@@ -36,6 +36,9 @@ android {
         buildConfig = true
     }
 }
+android {
+    lint { disable += "RemoveWorkManagerInitializer" }
+}
 dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
