@@ -10,7 +10,6 @@ import android.webkit.WebSettings
 import android.webkit.WebView
 import android.widget.Toast
 import androidx.activity.ComponentActivity
-import androidx.activity.compose.LocalActivity
 import androidx.activity.result.ActivityResultLauncher
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
@@ -40,7 +39,7 @@ fun GeminiWebViewer(
     onCameraTmpFileCreated: (Uri) -> Unit
 ) {
     val context = LocalContext.current
-    val activity = LocalActivity.current as ComponentActivity
+    val activity = LocalContext.current as ComponentActivity
     val initialUrl = "https://aistudio.google.com/u/0/prompts/new_chat"
     val spoofHeaders = mapOf("X-Requested-With" to "")
 
