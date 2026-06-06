@@ -287,7 +287,7 @@ class GeminiAccessibilityService : AccessibilityService() {
     fun selectAll() {
         val rootNode = rootInActiveWindow ?: return
         val focusedNode = rootNode.findFocus(AccessibilityNodeInfo.FOCUS_INPUT)
-        focusedNode?.performAction(AccessibilityNodeInfo.ACTION_SELECT_ALL)
+        focusedNode?.performAction(0x00001000)
     }
 
     // Copy selected text
@@ -297,3 +297,4 @@ class GeminiAccessibilityService : AccessibilityService() {
         focusedNode?.performAction(AccessibilityNodeInfo.ACTION_COPY)
     }
 }
+
