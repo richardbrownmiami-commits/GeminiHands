@@ -31,6 +31,7 @@ android {
     hilt {
         enableAggregatingTask = false
     }
+        lint { disable += "RemoveWorkManagerInitializer" }
     buildFeatures {
         compose = true
         buildConfig = true
