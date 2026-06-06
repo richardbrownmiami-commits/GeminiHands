@@ -3,8 +3,11 @@ package com.rx.geminipro.utils.services
 import android.content.Context
 import android.content.Intent
 import androidx.core.net.toUri
+import javax.inject.Inject
+import javax.inject.Singleton
 
-class GoogleServices {
+@Singleton
+class GoogleServices @Inject constructor() {
     fun openGoogleDocs(context: Context) {
         val googleDocsUrl = "https://docs.google.com/document/create"
         val intent = Intent(Intent.ACTION_VIEW, googleDocsUrl.toUri())
